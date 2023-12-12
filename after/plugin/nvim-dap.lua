@@ -1,0 +1,22 @@
+require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
+
+vim.keymap.set("n", "<F3>", function()
+	require("dap").continue()
+end)
+vim.keymap.set("n", "<leader>stov", function()
+	require("dap").step_over()
+end)
+vim.keymap.set("n", "<leader>sti", function()
+	require("dap").step_into()
+end)
+vim.keymap.set("n", "<leader>stou", function()
+	require("dap").step_out()
+end)
+
+vim.keymap.set("n", "<F12>", function()
+	require("dapui").close()
+end)
+
+vim.keymap.set("n", "<Leader>lp", function()
+	require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
+end)
